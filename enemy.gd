@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @export var max_health: int = 30
 var health: int
+var is_dead: bool = false
 
 var player: Node2D
 
@@ -20,9 +21,13 @@ func _ready() -> void:
 
 
 func take_damage(amount:int):
+	if is_dead:
+		return
+	
 	health -= amount
 	
 	if health <= 0:
+		is_dead = true
 		die()
 
 
