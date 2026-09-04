@@ -1,12 +1,18 @@
 extends CharacterBody2D
 @export var speed: float = 200.0
 @export var max_health: int = 100
+@export var experience: int = 0
+
 var health: int
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	health = max_health
+
+
+func add_experience(amount: int):
+	experience += amount
 
 
 func _take_damage(amount: int):

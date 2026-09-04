@@ -35,6 +35,8 @@ func take_damage(amount:int):
 
 func die():
 	is_dead = true
+	player.add_experience(10)
+	print(player.experience)
 	$DeathTimer.start()
 
 
