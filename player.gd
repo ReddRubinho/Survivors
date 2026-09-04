@@ -25,7 +25,7 @@ func die():
 	
 	queue_free()
 
-func _physics_process(_delta):
+func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	velocity = direction * speed
 	move_and_slide()

@@ -8,7 +8,7 @@ radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ncggm"]
 
-[node name="Enemy" type="CharacterBody2D" unique_id=55069550]
+[node name="Enemy" type="CharacterBody2D" unique_id=55069550 groups=["enemy"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_4gyqm")
@@ -17,7 +17,7 @@ script = ExtResource("1_4gyqm")
 shape = SubResource("CircleShape2D_7xaro")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1892032945]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_7k104")
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=1778711102]

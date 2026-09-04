@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://lrlkd4qbbrek" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://b6pyjum1wc0qp" path="res://icon.svg" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://bkowuu7o8ahy" path="res://weapon.gd" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://cqpdrk7fnmete" path="res://projectile.tscn" id="4_hqtel"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ncggm"]
 radius = 30.0
@@ -11,10 +13,19 @@ collision_mask = 2
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=207193882]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1670325347]
 shape = SubResource("CircleShape2D_ncggm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1221549935]
+
+[node name="Weapon" type="Node2D" parent="." unique_id=1706880153]
+script = ExtResource("3_i3pqv")
+projectile_scene = ExtResource("4_hqtel")
+
+[node name="Sprite2D" type="Sprite2D" parent="Weapon" unique_id=732595297]
+position = Vector2(40, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i3pqv")

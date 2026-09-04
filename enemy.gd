@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var player: Node2D
 
-func _physics_process(_delta):
+func _physics_process(delta: float) -> void:
 	if not is_instance_valid(player):
 		return
 	
