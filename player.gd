@@ -8,11 +8,13 @@ var health: int
 func _ready() -> void:
 	health = max_health
 
+
 func _take_damage(amount: int):
 	health -= amount
 	
 	if health <= 0:
 		die()
+
 
 func die():
 	var camera = get_node("Camera2D")
@@ -25,10 +27,12 @@ func die():
 	
 	queue_free()
 
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	velocity = direction * speed
 	move_and_slide()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,4 +1,6 @@
 extends CharacterBody2D
+@export var max_health: int = 30
+var health: int
 
 var player: Node2D
 
@@ -10,10 +12,23 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * 100.0
 	move_and_slide()
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	health = max_health
 	player = get_tree().get_first_node_in_group("player")
+
+
+func take_damage(amount:int):
+	health -= amount
 	
+	if health <= 0:
+		die()
+
+
+func die():
+	queue_free()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

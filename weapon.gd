@@ -3,6 +3,7 @@ extends Node2D
 @export var attack_cooldown: float = 1.0
 var attack_timer: float = 0.0
 
+
 func get_nearest_enemy():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	var nearest_enemy = null
@@ -15,6 +16,7 @@ func get_nearest_enemy():
 			nearest_distance = distance
 			nearest_enemy = enemy
 	return nearest_enemy
+
 
 func _physics_process(delta: float) -> void:
 	var enemy = get_nearest_enemy()
@@ -31,9 +33,13 @@ func _physics_process(delta: float) -> void:
 			projectile.direction = global_position.direction_to(enemy.global_position)
 			
 			attack_timer = attack_cooldown
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
