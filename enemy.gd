@@ -6,6 +6,9 @@ var is_dead: bool = false
 var player: Node2D
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+	
 	if not is_instance_valid(player):
 		return
 	
@@ -27,12 +30,12 @@ func take_damage(amount:int):
 	health -= amount
 	
 	if health <= 0:
-		is_dead = true
 		die()
 
 
 func die():
-	queue_free()
+	is_dead = true
+	$DeathTimer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,3 +46,7 @@ func _process(delta: float) -> void:
 func _on_damage_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body._take_damage(10)
+
+
+func _on_death_timer_timeout() -> void:
+	queue_free()
