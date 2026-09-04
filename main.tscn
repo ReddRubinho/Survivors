@@ -3,11 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://cq4ce7ytipe4t" path="res://player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://c3vbbfyvsdvi6" path="res://enemy_spawner.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bcd502mcmaw7l" path="res://enemy.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b6pyjum1wc0qp" path="res://icon.svg" id="4_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=1021216754]
 
 [node name="Player" parent="." unique_id=285548511 instance=ExtResource("1_0xm2m")]
+collision_mask = 0
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=700529769]
 script = ExtResource("2_h2yge")
 enemy_scene = ExtResource("3_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889957406]
+texture = ExtResource("4_1bvp3")
