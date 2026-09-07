@@ -1,4 +1,6 @@
 extends CharacterBody2D
+signal level_up_signal
+
 @export var speed: float = 200.0
 @export var max_health: int = 100
 @export var experience: int = 0
@@ -25,6 +27,15 @@ func level_up():
 	experience = 0
 	experience_to_next_level *= 1.2
 	print("level ", level, "experience needed: ", experience_to_next_level)
+	level_up_signal.emit()
+
+
+func increase_speed(amount: float):
+	speed *= amount
+
+
+func increase_max_health(amount: float):
+	max_health *= amount
 
 
 func _take_damage(amount: int):

@@ -1,8 +1,11 @@
 extends Node2D
 @export var projectile_scene: PackedScene
 @export var attack_cooldown: float = 0.3
+@export var damage: int = 10
 var attack_timer: float = 0.0
 
+func increase_attack_speed(amount: float):
+	attack_cooldown *= amount
 
 func get_nearest_enemy():
 	var enemies = get_tree().get_nodes_in_group("enemy")
@@ -29,6 +32,7 @@ func _physics_process(delta: float) -> void:
 			var projectile = projectile_scene.instantiate()
 			get_parent().get_parent().add_child(projectile)
 			
+			projectile.damage = damage
 			projectile.global_position = $Sprite2D.global_position
 			projectile.direction = global_position.direction_to(enemy.global_position)
 			
