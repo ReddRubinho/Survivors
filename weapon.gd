@@ -1,6 +1,6 @@
 extends Node2D
 @export var projectile_scene: PackedScene
-@export var attack_cooldown: float = 1.0
+@export var attack_cooldown: float = 0.3
 var attack_timer: float = 0.0
 
 

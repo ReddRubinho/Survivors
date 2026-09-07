@@ -2,6 +2,8 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @export var max_health: int = 100
 @export var experience: int = 0
+@export var level: int = 1
+@export var experience_to_next_level: int = 100
 
 var health: int
 
@@ -13,6 +15,16 @@ func _ready() -> void:
 
 func add_experience(amount: int):
 	experience += amount
+	
+	if experience >= experience_to_next_level:
+		level_up()
+
+
+func level_up():
+	level += 1
+	experience = 0
+	experience_to_next_level *= 1.2
+	print("level ", level, "experience needed: ", experience_to_next_level)
 
 
 func _take_damage(amount: int):
