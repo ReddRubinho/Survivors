@@ -7,6 +7,10 @@ var attack_timer: float = 0.0
 func increase_attack_speed(amount: float):
 	attack_cooldown *= amount
 
+
+func increase_damage(amount: float):
+	damage = round(damage * amount)
+
 func get_nearest_enemy():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	var nearest_enemy = null

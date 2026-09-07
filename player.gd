@@ -24,7 +24,7 @@ func add_experience(amount: int):
 
 func level_up():
 	level += 1
-	experience = 0
+	experience -= experience_to_next_level
 	experience_to_next_level *= 1.2
 	print("level ", level, "experience needed: ", experience_to_next_level)
 	level_up_signal.emit()
@@ -35,7 +35,9 @@ func increase_speed(amount: float):
 
 
 func increase_max_health(amount: float):
-	max_health *= amount
+	var new_max_health = round(max_health * amount)
+	health += new_max_health - max_health
+	max_health = new_max_health
 
 
 func _take_damage(amount: int):

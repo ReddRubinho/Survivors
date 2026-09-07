@@ -15,6 +15,7 @@ func _on_player_level_up_signal() -> void:
 	print("EL jugador ha subido de nivel!")
 	$UpgradeMenu.visible = true
 	get_tree().paused = true
+	$Player.increase_max_health(1.20)
 
 
 func _on_button_pressed() -> void:
@@ -30,6 +31,6 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_button_3_pressed() -> void:
-	$Player/Weapon.damage *= 3.00
+	$Player/Weapon.increase_damage(3.0)
 	$UpgradeMenu.visible = false
 	get_tree().paused = false
