@@ -14,5 +14,10 @@ collision_mask = 0
 script = ExtResource("2_h2yge")
 enemy_scene = ExtResource("3_h2yge")
 
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=702267376]
+autostart = true
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889957406]
 texture = ExtResource("4_1bvp3")
+
+[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
