@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bkftxnub7l2xp"]
+
+[ext_resource type="Script" uid="uid://bkowuu7o8ahy" path="res://pistol.gd" id="1_6e3nq"]
+[ext_resource type="PackedScene" uid="uid://cqpdrk7fnmete" path="res://projectile.tscn" id="2_646vd"]
+[ext_resource type="Texture2D" uid="uid://b6pyjum1wc0qp" path="res://icon.svg" id="3_78vgs"]
+
+[node name="Pistol" type="Node2D" unique_id=1046747733]
+script = ExtResource("1_6e3nq")
+projectile_scene = ExtResource("2_646vd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890785368]
+position = Vector2(40, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_78vgs")

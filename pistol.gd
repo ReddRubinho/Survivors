@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		
 		if attack_timer <= 0:
 			var projectile = projectile_scene.instantiate()
-			get_parent().get_parent().add_child(projectile)
+			get_tree().current_scene.add_child(projectile)
 			
 			projectile.damage = damage
 			projectile.global_position = $Sprite2D.global_position

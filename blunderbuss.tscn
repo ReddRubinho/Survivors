@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cpd5om6bn7jww"]
+
+[ext_resource type="Script" uid="uid://cmdxgvbpiww5c" path="res://blunderbuss.gd" id="1_41e5l"]
+[ext_resource type="Texture2D" uid="uid://b6pyjum1wc0qp" path="res://icon.svg" id="2_p0em1"]
+
+[node name="Blunderbuss" type="Node2D" unique_id=1632826593]
+script = ExtResource("1_41e5l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=114479864]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_p0em1")

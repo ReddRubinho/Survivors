@@ -25,12 +25,12 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	$Player/Weapon.increase_attack_speed(0.5)
+	$Player/Weapons/Pistol.increase_attack_speed(0.5)
 	$UpgradeMenu.visible = false
 	get_tree().paused = false
 
 
 func _on_button_3_pressed() -> void:
-	$Player/Weapon.increase_damage(3.0)
+	$Player/Weapons/Pistol.increase_damage(3.0)
 	$UpgradeMenu.visible = false
 	get_tree().paused = false
