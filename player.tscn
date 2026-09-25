@@ -26,11 +26,9 @@ shape = SubResource("CircleShape2D_ncggm")
 [node name="Weapons" type="Node2D" parent="." unique_id=2108888436]
 
 [node name="Pistol" parent="Weapons" unique_id=1046747733 instance=ExtResource("3_i3pqv")]
-process_mode = 4
 position = Vector2(5, 10)
 
 [node name="Blunderbuss" parent="Weapons" unique_id=1632826593 instance=ExtResource("4_hqtel")]
-process_mode = 4
 position = Vector2(-5, -10)
 projectile_scene = ExtResource("5_sweqy")
 

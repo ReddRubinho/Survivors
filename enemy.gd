@@ -35,6 +35,8 @@ func take_damage(amount:int):
 
 func die():
 	is_dead = true
+	collision_layer = 0
+	remove_from_group("enemy")
 	print(player.experience + 10)
 	player.add_experience(10)
 	$DeathTimer.start()

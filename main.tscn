@@ -12,12 +12,12 @@ script = ExtResource("1_lquwl")
 [node name="Player" parent="." unique_id=285548511 instance=ExtResource("1_0xm2m")]
 collision_mask = 0
 
-[node name="EnemySpawner" type="Node2D" parent="." unique_id=700529769]
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=700529769 node_paths=PackedStringArray("player")]
 script = ExtResource("2_h2yge")
 enemy_scene = ExtResource("3_h2yge")
-
-[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=702267376]
-autostart = true
+min_spawn_percentage = 120.0
+max_spawn_percentage = 150.0
+player = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889957406]
 texture = ExtResource("4_1bvp3")
@@ -74,7 +74,6 @@ layout_mode = 2
 text = "+200% Daño"
 
 [connection signal="level_up_signal" from="Player" to="." method="_on_player_level_up_signal"]
-[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="UpgradeMenu/Control/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="UpgradeMenu/Control/Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="UpgradeMenu/Control/Panel/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

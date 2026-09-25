@@ -5,7 +5,7 @@ signal level_up_signal
 @export var max_health: int = 100
 @export var experience: int = 0
 @export var level: int = 1
-@export var experience_to_next_level: int = 100
+@export var experience_to_next_level: int = 10
 
 var health: int
 
