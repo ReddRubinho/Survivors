@@ -73,6 +73,31 @@ text = "+50% Velocidad de ataque"
 layout_mode = 2
 text = "+200% Daño"
 
+[node name="HUD" type="CanvasLayer" parent="." unique_id=92713375]
+
+[node name="MissionTimer" type="Label" parent="HUD" unique_id=858119015]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyCount" type="Label" parent="HUD" unique_id=2116577459]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+
+[node name="PlayerLevel" type="Label" parent="HUD" unique_id=219025244]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="level_up_signal" from="Player" to="." method="_on_player_level_up_signal"]
 [connection signal="pressed" from="UpgradeMenu/Control/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="UpgradeMenu/Control/Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

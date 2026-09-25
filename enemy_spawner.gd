@@ -12,7 +12,7 @@ extends Node2D
 
 
 @export_category("Escalado por tiempo")
-@export var time_multiplier = 0.0
+@export var time_multiplier = 1.0
 
 @export_category("Distancia de aparicion")
 @export_range(100.0, 300.0, 1.0)
@@ -45,8 +45,6 @@ func update_enemy_population() -> void:
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	var enemy_count = enemies.size()
 	
-	print(enemy_count, " enemigos")
-	
 	if enemy_count >= target_population:
 		return
 	
@@ -59,10 +57,12 @@ func update_enemy_population() -> void:
 
 func calculate_enemy_population() -> int:
 	var player_level = player.level 
+	var mission_minutes = floori(get_parent().mission_time / 60)
 	
 	var population = base_enemies
 	
-	population += player.level * level_multiplier
+	population += player.level * level_multiplier 
+	population += mission_minutes * time_multiplier
 	
 	return roundi(population)
 
